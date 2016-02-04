@@ -26,15 +26,20 @@ TESTDATA = {
 class IRedirect(Interface):
     """ Define settings data structure """
 
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=True,
+    )
+
     enableRedirect = schema.Bool(
         title=u'Enable URL redirection.',
         default=False,
         required=False,
     )
 
-    form.widget(policyMessage=WysiwygFieldWidget)
+    form.widget(body=WysiwygFieldWidget)
     body = schema.Text(
-        title=u"Content",
+        title=u"Page Body",
         default=u"This is a page redirection")
 
     enableRegexURL = schema.Bool(

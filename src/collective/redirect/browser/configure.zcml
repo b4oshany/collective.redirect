@@ -17,6 +17,24 @@
       directory="static"
       />
 
+  <browser:page
+     name="redirectview"
+     for="*"
+     layer="zope.interface.Interface"
+     class=".views.RedirectView"
+     template="templates/redirect_page.pt"
+     permission="zope2.View"
+     />
+
+  <browser:viewlet
+    name="jsfunctions"
+    for="*"
+    manager="plone.app.layout.viewlets.interfaces.IAboveContent"
+    class=".viewlets.JSFunctionsViewlet"
+    template="templates/jsfunctions.pt"
+    permission="zope2.View"
+    />
+
   <browser:viewlet
     name="redirectviewlet"
     for="*"

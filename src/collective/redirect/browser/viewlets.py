@@ -24,8 +24,8 @@ class RedirectViewlet(ViewletBase):
     def script(self, obj):
         return "<script>$(document).ready(function(){url_redirector('%s', '%s', '%s');});</script>" % (
                 obj.redirectURL,
-                obj.obj.url or obj.absolute_url(),
-                obj.enableRegexURL)
+                obj.absolute_url(),
+                "^" if obj.enableRegexURL else "")
 
     @property
     def redirect_to(self):
@@ -34,14 +34,6 @@ class RedirectViewlet(ViewletBase):
     @property
     def prefix(self):
         return schema_prefix
-
-    def get_registry_entry(self,entry):
-        _entry = None
-        try:
-            _entry = api.portal.get_registry_record(entry)
-        except ComponentLookupError:
-            pass
-        return _entry
 
     def is_front_page(self):
         """
@@ -59,8 +51,10 @@ class RedirectViewlet(ViewletBase):
 
     @ram.cache(lambda *args: time() // (60 * 60))
     def redirects(self):
+        #import pdb; pdb.set_trace()
+
         catalog = api.portal.get_tool('portal_catalog')
-        redirects = catalog(portal_type='redirectpage')
+        redirects = catalog(portal_type='RedirectPage')
         results = []
         for redirect in redirects:
             obj = redirect.getObject()

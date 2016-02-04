@@ -1,0 +1,5 @@
+
+<script tal:content="string:var base_url='${context/@@plone_portal_state/portal_url}';"></script>
+<script tal:define="navroot context/@@plone_portal_state/navigation_root_url"
+        tal:attributes="src string:${navroot}/++resource++collective.redirect/redirector.js"
+ ></script>

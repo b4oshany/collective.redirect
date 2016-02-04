@@ -14,8 +14,9 @@
   <property name="allowed_content_types">
   </property>
   <property name="allow_discussion">False</property>
-  <property name="default_view">view</property>
+  <property name="default_view">redirectview</property>
   <property name="view_methods">
+    <element value="redirectview" />
     <element value="view"/>
   </property>
   <property name="default_view_fallback">False</property>

@@ -3,24 +3,23 @@
       xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n"
       metal:use-macro="context/main_template/macros/master">
-    <metal:block fill-slot="content-title"></metal:block>
+    <metal:block fill-slot="content-title"><h1>${context.title}</h1></metal:block>
     <metal:block fill-slot="content-description"></metal:block>
     <metal:block fill-slot="top_slot" tal:define="dummy python:request.set('disable_border',1)" />
     <metal:block fill-slot="main">
-        <metal:block  tal:define="data view/data">
-            <div tal:content="structure data/policy" />
-            <form class="allow-submit" tal:attributes="action view/original_url; method request/REQUEST_METHOD">
-                <tal:values tal:repeat="key python: request.form.keys()">
-                  <span tal:condition="python: key != 'original_url'">
-                    <input type="hidden" tal:attributes="name key; value python: request.form[key]" />
-                  </span>
-                </tal:values>
-                <div style="text-align: center">
-                    <button type="submit" class="button">
-                        <span tal:replace="data/buttonTitle" />
-                    </button>
-                </div>
-            </form>
-        </metal:block>
+      <h1 align="center" tal:content="context/title"></h1>
+      <p tal:replace="structure context/body" ></p>
+      <form class="allow-submit" tal:attributes="action view/original_url; method request/REQUEST_METHOD">
+          <tal:values tal:repeat="key python: request.form.keys()">
+            <span tal:condition="python: key != 'original_url'">
+              <input type="hidden" tal:attributes="name key; value python: request.form[key]" />
+            </span>
+          </tal:values>
+          <div style="text-align: center">
+              <button type="submit" class="button">
+                  <span tal:replace="context/submitButtonTitle" />
+              </button>
+          </div>
+      </form>
     </metal:block>
 </html>
