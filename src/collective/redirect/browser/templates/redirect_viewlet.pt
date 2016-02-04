@@ -1,0 +1,11 @@
+<metal:block tal:define="redirects view/redirects">
+  <div tal:repeat="redirect redirects">
+    <span tal:content="redirect/redirectURL"></span>
+
+      <span tal:content="redirect/enableRedirect"></span>
+    <metal:show tal:condition="redirect/enableRedirect">
+        <script tal:replace="structure redirect/script"></script>
+    </metal:show>
+  </div>
+</metal:block>
+<span>oshane< bailey</span>
