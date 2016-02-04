@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Installer for the collective.redirectpage package."""
+"""Installer for the collective.redirect package."""
 
 from setuptools import find_packages
 from setuptools import setup
@@ -18,7 +18,7 @@ long_description = (
 
 
 setup(
-    name='collective.redirectpage',
+    name='collective.redirect',
     version='1.0a1',
     description="Allow redirection to a given page based on a given string which match a number of links.",
     long_description=long_description,
@@ -35,7 +35,7 @@ setup(
     keywords='Python Plone',
     author='Oshane Bailey',
     author_email='b4.oshany@gmail.com',
-    url='https://pypi.python.org/pypi/collective.redirectpage',
+    url='https://pypi.python.org/pypi/collective.redirect',
     license='GPL version 2',
     packages=find_packages('src', exclude=['ez_setup']),
     namespace_packages=['collective'],

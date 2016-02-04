@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <layers>
   <layer
-      name="collective.redirectpage"
-      interface="collective.redirectpage.interfaces.ICollectiveRedirectpageLayer"
+      name="collective.redirect"
+      interface="collective.redirect.interfaces.ICollectiveRedirectLayer"
       />
 </layers>

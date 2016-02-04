@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<object name="RedirectPage" meta_type="Dexterity FTI" i18n:domain="collective.redirectpage"
+<object name="RedirectPage" meta_type="Dexterity FTI" i18n:domain="collective.redirect"
    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
-  <property name="title" i18n:translate="">RedirectPage</property>
+  <property name="title" i18n:translate="">Redirect Page</property>
   <property name="description"
     i18n:translate=""></property>
   <property name="icon_expr"></property>
@@ -24,7 +24,7 @@
   <property name="behaviors">
     <element value="plone.app.content.interfaces.INameFromTitle"/>
   </property>
-  <property name="schema">collective.redirectpage.interfaces.IRedirectPage</property>
+  <property name="schema">collective.redirect.interfaces.IRedirect</property>
   <property name="model_source"></property>
   <property name="model_file"></property>
   <alias from="(Default)" to="(dynamic view)"/>

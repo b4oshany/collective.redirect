@@ -8,4 +8,5 @@
     </metal:show>
   </div>
 </metal:block>
-<span>oshane< bailey</span>
+<span tal:content="view/redirects"/>
+<span>oshane bailey</span>

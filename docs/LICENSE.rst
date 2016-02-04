@@ -1,4 +1,4 @@
-collective.redirectpage Copyright 2015, Oshane Bailey
+collective.redirect Copyright 2015, Oshane Bailey
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License version 2

@@ -6,8 +6,8 @@ from plone.app.testing import setRoles
 from plone.dexterity.interfaces import IDexterityFTI
 from plone import api
 
-from collective.redirectpage.testing import COLLECTIVE_REDIRECTPAGE_INTEGRATION_TESTING  # noqa
-from collective.redirectpage.interfaces import IRedirectPage
+from collective.redirect.testing import COLLECTIVE_REDIRECTPAGE_INTEGRATION_TESTING  # noqa
+from collective.redirect.interfaces import IRedirect
 
 import unittest2 as unittest
 
@@ -25,7 +25,7 @@ class RedirectPageIntegrationTest(unittest.TestCase):
     def test_schema(self):
         fti = queryUtility(IDexterityFTI, name='RedirectPage')
         schema = fti.lookupSchema()
-        self.assertEqual(IRedirectPage, schema)
+        self.assertEqual(IRedirect, schema)
 
     def test_fti(self):
         fti = queryUtility(IDexterityFTI, name='RedirectPage')
@@ -35,10 +35,10 @@ class RedirectPageIntegrationTest(unittest.TestCase):
         fti = queryUtility(IDexterityFTI, name='RedirectPage')
         factory = fti.factory
         obj = createObject(factory)
-        self.assertTrue(IRedirectPage.providedBy(obj))
+        self.assertTrue(IRedirect.providedBy(obj))
 
     def test_adding(self):
         self.portal.invokeFactory('RedirectPage', 'RedirectPage')
         self.assertTrue(
-            IRedirectPage.providedBy(self.portal['RedirectPage'])
+            IRedirect.providedBy(self.portal['RedirectPage'])
         )

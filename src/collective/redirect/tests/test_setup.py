@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 """Setup tests for this package."""
-from collective.redirectpage.testing import COLLECTIVE_REDIRECTPAGE_INTEGRATION_TESTING  # noqa
+from collective.redirect.testing import COLLECTIVE_REDIRECTPAGE_INTEGRATION_TESTING  # noqa
 from plone import api
 
 import unittest
 
 
 class TestSetup(unittest.TestCase):
-    """Test that collective.redirectpage is properly installed."""
+    """Test that collective.redirect is properly installed."""
 
     layer = COLLECTIVE_REDIRECTPAGE_INTEGRATION_TESTING
 
@@ -17,16 +17,16 @@ class TestSetup(unittest.TestCase):
         self.installer = api.portal.get_tool('portal_quickinstaller')
 
     def test_product_installed(self):
-        """Test if collective.redirectpage is installed."""
+        """Test if collective.redirect is installed."""
         self.assertTrue(self.installer.isProductInstalled(
-            'collective.redirectpage'))
+            'collective.redirect'))
 
     def test_browserlayer(self):
-        """Test that ICollectiveRedirectpageLayer is registered."""
-        from collective.redirectpage.interfaces import (
-            ICollectiveRedirectpageLayer)
+        """Test that ICollectiveRedirectLayer is registered."""
+        from collective.redirect.interfaces import (
+            ICollectiveRedirectLayer)
         from plone.browserlayer import utils
-        self.assertIn(ICollectiveRedirectpageLayer, utils.registered_layers())
+        self.assertIn(ICollectiveRedirectLayer, utils.registered_layers())
 
 
 class TestUninstall(unittest.TestCase):
@@ -36,15 +36,15 @@ class TestUninstall(unittest.TestCase):
     def setUp(self):
         self.portal = self.layer['portal']
         self.installer = api.portal.get_tool('portal_quickinstaller')
-        self.installer.uninstallProducts(['collective.redirectpage'])
+        self.installer.uninstallProducts(['collective.redirect'])
 
     def test_product_uninstalled(self):
-        """Test if collective.redirectpage is cleanly uninstalled."""
+        """Test if collective.redirect is cleanly uninstalled."""
         self.assertFalse(self.installer.isProductInstalled(
-            'collective.redirectpage'))
+            'collective.redirect'))
 
     def test_browserlayer_removed(self):
-        """Test that ICollectiveRedirectpageLayer is removed."""
-        from collective.redirectpage.interfaces import ICollectiveRedirectpageLayer
+        """Test that ICollectiveRedirectLayer is removed."""
+        from collective.redirect.interfaces import ICollectiveRedirectLayer
         from plone.browserlayer import utils
-        self.assertNotIn(ICollectiveRedirectpageLayer, utils.registered_layers())
+        self.assertNotIn(ICollectiveRedirectLayer, utils.registered_layers())

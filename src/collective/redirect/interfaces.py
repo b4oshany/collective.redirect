@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Module where all interfaces, events and exceptions live."""
 
-from collective.redirectpage import _
+from collective.redirect import _
 from zope import schema
 from zope.interface import Interface
 from plone.directives import form
@@ -9,11 +9,11 @@ from plone.app.z3cform.wysiwyg import WysiwygFieldWidget
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
 
 
-class ICollectiveRedirectpageLayer(IDefaultBrowserLayer):
+class ICollectiveRedirectLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
 
 schema_prefix = \
-    "collective.redirectpage.interfaces.IRedirectPage"
+    "collective.redirect.interfaces.IRedirect"
 
 TESTDATA = {
     "policyMessage": "",
@@ -23,7 +23,7 @@ TESTDATA = {
 }
 
 
-class IRedirectPage(Interface):
+class IRedirect(Interface):
     """ Define settings data structure """
 
     enableRedirect = schema.Bool(

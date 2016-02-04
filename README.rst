@@ -3,7 +3,7 @@
    This text does not appear on pypi or github. It is a comment.
 
 ==============================================================================
-collective.redirectpage
+collective.redirect
 ==============================================================================
 
 Tell me what your product does
@@ -38,14 +38,14 @@ This product has been translated into
 Installation
 ------------
 
-Install collective.redirectpage by adding it to your buildout::
+Install collective.redirect by adding it to your buildout::
 
     [buildout]
 
     ...
 
     eggs =
-        collective.redirectpage
+        collective.redirect
 
 
 and then running ``bin/buildout``
@@ -54,8 +54,8 @@ and then running ``bin/buildout``
 Contribute
 ----------
 
-- Issue Tracker: https://github.com/collective/collective.redirectpage/issues
-- Source Code: https://github.com/collective/collective.redirectpage
+- Issue Tracker: https://github.com/collective/collective.redirect/issues
+- Source Code: https://github.com/collective/collective.redirect
 - Documentation: https://docs.plone.org/foo/bar
 
 

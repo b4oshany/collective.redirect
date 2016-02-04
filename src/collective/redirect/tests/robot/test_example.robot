@@ -4,13 +4,13 @@
 #
 # Run this robot test stand-alone:
 #
-#  $ bin/test -s collective.redirectpage -t test_example.robot --all
+#  $ bin/test -s collective.redirect -t test_example.robot --all
 #
 # Run this robot test with robot server (which is faster):
 #
 # 1) Start robot server:
 #
-# $ bin/robot-server --reload-path src collective.redirectpage.testing.COLLECTIVE_REDIRECTPAGE_ACCEPTANCE_TESTING
+# $ bin/robot-server --reload-path src collective.redirect.testing.COLLECTIVE_REDIRECTPAGE_ACCEPTANCE_TESTING
 #
 # 2) Run robot tests:
 #
