@@ -23,7 +23,7 @@ class RedirectViewlet(ViewletBase):
 
     def script(self, obj):
         return "<script>$(document).ready(function(){url_redirector('%s', '%s', '%s');});</script>" % (
-                obj.redirectURL,
+                obj.redirectURL.replace('\n', ' ').replace('\r', ''),
                 obj.absolute_url(),
                 "^" if obj.enableRegexURL else "")
 
@@ -57,7 +57,10 @@ class RedirectViewlet(ViewletBase):
         redirects = catalog(portal_type='RedirectPage')
         results = []
         for redirect in redirects:
-            obj = redirect.getObject()
-            obj.script = self.script(obj)
+            r = redirect.getObject()
+            obj = dict(
+                script=self.script(r),
+                enableRedirect=r.enableRedirect,
+            )
             results.append(obj)
         return results
