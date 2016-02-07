@@ -15,6 +15,7 @@
               <input type="hidden" tal:attributes="name key; value python: request.form[key]" />
             </span>
           </tal:values>
+          <br/><br/>
           <div style="text-align: center">
               <button type="submit" class="button">
                   <span tal:replace="context/submitButtonTitle" />

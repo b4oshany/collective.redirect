@@ -28,10 +28,6 @@ class RedirectViewlet(ViewletBase):
                 "^" if obj.enableRegexURL else "")
 
     @property
-    def redirect_to(self):
-        return "policy-confirmation"
-
-    @property
     def prefix(self):
         return schema_prefix
 
@@ -51,10 +47,9 @@ class RedirectViewlet(ViewletBase):
 
     @ram.cache(lambda *args: time() // (60 * 60))
     def redirects(self):
-        #import pdb; pdb.set_trace()
-
+        """Get the list of RedirectPage objects from portal_catalog."""
         catalog = api.portal.get_tool('portal_catalog')
-        redirects = catalog(portal_type='RedirectPage')
+        redirects = catalog(portal_type='RedirectPage', review_state="published")
         results = []
         for redirect in redirects:
             r = redirect.getObject()

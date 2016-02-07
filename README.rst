@@ -6,33 +6,24 @@
 collective.redirect
 ==============================================================================
 
-Tell me what your product does
+collective.redirect is used to redirect links on Plone websites to a specific
+page on the same domain or another domain. This packages can redirect both
+internal and external links on the Plone websites.
+#### Note: collective.redirect is a contenttype (RedirectPage).
 
 Features
 --------
 
-- Can be bullet points
+- Create a custom redirect/confirmation page.
+- Allow redirection for external links on any page.
+- Allow redirection for internal links on any page.
 
-
-Examples
---------
-
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
 
 
 Documentation
 -------------
 
 Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
-
-
-Translations
-------------
-
-This product has been translated into
-
-- Klingon (thanks, K'Plai)
 
 
 Installation
@@ -56,7 +47,7 @@ Contribute
 
 - Issue Tracker: https://github.com/collective/collective.redirect/issues
 - Source Code: https://github.com/collective/collective.redirect
-- Documentation: https://docs.plone.org/foo/bar
+- Documentation: https://github.com/b4oshany/collective.redirect/wiki
 
 
 Support
