@@ -21,11 +21,16 @@ class JSFunctionsViewlet(ViewletBase):
 class RedirectViewlet(ViewletBase):
     """ viewlet that displays announcements """
 
-    def script(self, obj):
-        return "<script>$(document).ready(function(){url_redirector('%s', '%s', '%s');});</script>" % (
-                obj.redirectURL.replace('\n', ' ').replace('\r', ''),
-                obj.absolute_url(),
-                "^" if obj.enableRegexURL else "")
+    def redirect_span(self, obj):
+        return "<span class='collective-redirect-data' data-redirect='{}' data-url='{}' data-regex='{}'></span>".format(
+            obj.redirectURL,
+            obj.absolute_url(),
+            "^" if obj.enableRegexURL else ""
+        )
+
+    @property
+    def redirect_to(self):
+        return "policy-confirmation"
 
     @property
     def prefix(self):
@@ -45,17 +50,19 @@ class RedirectViewlet(ViewletBase):
         path = canonical.absolute_url_path()
         return INavigationRoot.providedBy(canonical)
 
-    @ram.cache(lambda *args: time() // (60 * 60))
+    # @ram.cache(lambda *args: time() // (60 * 60))
     def redirects(self):
         """Get the list of RedirectPage objects from portal_catalog."""
         catalog = api.portal.get_tool('portal_catalog')
         redirects = catalog(portal_type='RedirectPage', review_state="published")
         results = []
+        obj = {}
         for redirect in redirects:
-            r = redirect.getObject()
+            redirect = redirect.getObject()
             obj = dict(
-                script=self.script(r),
-                enableRedirect=r.enableRedirect,
+                enableRedirect=redirect.enableRedirect,
+                redirectURL=redirect.redirectURL,
+                span=self.redirect_span(redirect)
             )
             results.append(obj)
         return results
