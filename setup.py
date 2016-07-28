@@ -19,7 +19,7 @@ long_description = (
 
 setup(
     name='collective.redirect',
-    version='1.0.3',
+    version='2.0.0',
     description="Allow redirection to a given page based on given url strings that is found on a page.",
     long_description=long_description,
     # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
