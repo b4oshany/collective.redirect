@@ -19,11 +19,13 @@ Features
 - Allow redirection for internal links on any page.
 
 
+Examples
+--------
 
-Documentation
--------------
-
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
+This add-on can be seen in action at the following sites:
+- adding a confirmation page for form submission.
+- adding a confirmation page for external links on your plone site, which will allow users to choose if they want to leave your site or not.
+- force the user to see a notification or warning page for any links or pages on your site before visiting it.
 
 
 Installation

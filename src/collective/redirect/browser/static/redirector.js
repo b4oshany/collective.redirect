@@ -11,3 +11,18 @@ function url_redirector(redirectURL, redirect_to, urlRegex){
 		});
 	};
 }
+
+
+$(document).ready(function(){
+	
+	var $redirect_items = $(".collective-redirect-data");
+	$redirect_items.each(function(){
+		$this = $(this);
+		redirect_url = $this.attr("data-redirect");
+		redirect_to = $this.attr("data-url");
+		regex = $this.attr("data-regex");
+		url_redirector(redirect_url, redirect_to, regex);
+		console.log(this);
+	});
+	
+});
