@@ -54,7 +54,7 @@ class RedirectViewlet(ViewletBase):
     def redirects(self):
         """Get the list of RedirectPage objects from portal_catalog."""
         catalog = api.portal.get_tool('portal_catalog')
-        redirects = catalog(portal_type='RedirectPage', review_state="published")
+        redirects = catalog(portal_type='RedirectPage') #review_state="published"
         results = []
         obj = {}
         for redirect in redirects:
