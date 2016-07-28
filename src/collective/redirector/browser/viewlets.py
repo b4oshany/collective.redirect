@@ -7,7 +7,7 @@ from Products.CMFCore.interfaces import ISiteRoot
 from zope.component import getMultiAdapter
 from plone.app.layout.navigation.interfaces import INavigationRoot
 from plone.api.exc import InvalidParameterError
-from collective.redirect.interfaces import (IRedirect, schema_prefix,
+from collective.redirector.interfaces import (IRedirect, schema_prefix,
                                                 TESTDATA)
 
 from time import time

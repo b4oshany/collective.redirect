@@ -6,8 +6,8 @@ from plone.app.testing import setRoles
 from plone.dexterity.interfaces import IDexterityFTI
 from plone import api
 
-from collective.redirect.testing import COLLECTIVE_REDIRECTPAGE_INTEGRATION_TESTING  # noqa
-from collective.redirect.interfaces import IRedirect
+from collective.redirector.testing import COLLECTIVE_REDIRECTPAGE_INTEGRATION_TESTING  # noqa
+from collective.redirector.interfaces import IRedirect
 
 import unittest2 as unittest
 

@@ -7,7 +7,7 @@ from plone.app.testing import IntegrationTesting
 from plone.app.testing import PloneSandboxLayer
 from plone.testing import z2
 
-import collective.redirect
+import collective.redirector
 
 
 class CollectiveRedirectpageLayer(PloneSandboxLayer):
@@ -15,10 +15,10 @@ class CollectiveRedirectpageLayer(PloneSandboxLayer):
     defaultBases = (PLONE_APP_CONTENTTYPES_FIXTURE,)
 
     def setUpZope(self, app, configurationContext):
-        self.loadZCML(package=collective.redirect)
+        self.loadZCML(package=collective.redirector)
 
     def setUpPloneSite(self, portal):
-        applyProfile(portal, 'collective.redirect:default')
+        applyProfile(portal, 'collective.redirector:default')
 
 
 COLLECTIVE_REDIRECTPAGE_FIXTURE = CollectiveRedirectpageLayer()

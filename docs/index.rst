@@ -1,5 +1,5 @@
 ====================
-collective.redirect
+collective.redirector
 ====================
 
 User documentation

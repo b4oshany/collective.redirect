@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Module where all interfaces, events and exceptions live."""
 
-from collective.redirect import _
+from collective.redirector import _
 from zope import schema
 from zope.interface import Interface
 from plone.directives import form
@@ -13,7 +13,7 @@ class ICollectiveRedirectLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
 
 schema_prefix = \
-    "collective.redirect.interfaces.IRedirect"
+    "collective.redirector.interfaces.IRedirect"
 
 TESTDATA = {
     "policyMessage": "",

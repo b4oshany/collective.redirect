@@ -2,18 +2,18 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:plone="http://namespaces.plone.org/plone"
-    i18n_domain="collective.redirect">
+    i18n_domain="collective.redirector">
 
   <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
   <include package="z3c.jbot" file="meta.zcml" />
   <browser:jbot
       directory="overrides"
-      layer="collective.redirect.interfaces.ICollectiveRedirectLayer"
+      layer="collective.redirector.interfaces.ICollectiveRedirectLayer"
       />
 
   <!-- Publish static files -->
   <browser:resourceDirectory
-      name="collective.redirect"
+      name="collective.redirector"
       directory="static"
       />
 

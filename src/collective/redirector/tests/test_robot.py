@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from collective.redirect.testing import COLLECTIVE_REDIRECTPAGE_ACCEPTANCE_TESTING  # noqa
+from collective.redirector.testing import COLLECTIVE_REDIRECTPAGE_ACCEPTANCE_TESTING  # noqa
 from plone.app.testing import ROBOT_TEST_LEVEL
 from plone.testing import layered
 

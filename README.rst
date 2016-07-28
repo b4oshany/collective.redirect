@@ -3,13 +3,13 @@
    This text does not appear on pypi or github. It is a comment.
 
 ==============================================================================
-collective.redirect
+collective.redirector
 ==============================================================================
 
-collective.redirect is used to redirect links on Plone websites to a specific
+collective.redirector is used to redirect links on Plone websites to a specific
 page on the same domain or another domain. This packages can redirect both
 internal and external links on the Plone websites.
-#### Note: collective.redirect is a contenttype (RedirectPage).
+#### Note: collective.redirector is a contenttype (RedirectPage).
 
 Features
 --------
@@ -31,14 +31,14 @@ This add-on can be seen in action at the following sites:
 Installation
 ------------
 
-Install collective.redirect by adding it to your buildout::
+Install collective.redirector by adding it to your buildout::
 
     [buildout]
 
     ...
 
     eggs =
-        collective.redirect
+        collective.redirector
 
 
 and then running ``bin/buildout``
@@ -47,9 +47,9 @@ and then running ``bin/buildout``
 Contribute
 ----------
 
-- Issue Tracker: https://github.com/collective/collective.redirect/issues
-- Source Code: https://github.com/collective/collective.redirect
-- Documentation: https://github.com/b4oshany/collective.redirect/wiki
+- Issue Tracker: https://github.com/collective/collective.redirector/issues
+- Source Code: https://github.com/collective/collective.redirector
+- Documentation: https://github.com/b4oshany/collective.redirector/wiki
 
 
 Support

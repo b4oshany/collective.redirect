@@ -1,7 +1,7 @@
 from plone.dexterity.browser.view import DefaultView
 from plone import api
 
-from collective.redirect.interfaces import schema_prefix
+from collective.redirector.interfaces import schema_prefix
 
 
 class RedirectView(DefaultView):
