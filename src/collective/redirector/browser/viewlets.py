@@ -22,10 +22,12 @@ class RedirectViewlet(ViewletBase):
     """ viewlet that displays announcements """
 
     def redirect_span(self, obj):
-        return "<span class='collective-redirect-data' data-redirect='{}' data-url='{}' data-regex='{}'></span>".format(
-            obj.redirectURL,
+        return ("<span class='collective-redirect-data' data-external-redirect='{3}' "
+                "data-redirect='{0}' data-url='{1}' data-regex='{2}'></span>").format(
+            obj.redirectURL or "",
             obj.absolute_url(),
-            "^" if obj.enableRegexURL else ""
+            "*" if obj.enableRegexURL else "^",
+            'true' if obj.redirectExternalLinks else 'false'
         )
 
     @property

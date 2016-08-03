@@ -42,9 +42,24 @@ class IRedirect(Interface):
         title=u"Page Body",
         default=u"This is a page redirection")
 
+    redirectExternalLinks = schema.Bool(
+        title=(u'Enable redirect for all external links to this page.'),
+        description=(u'Note: if there are more than one Redirect Page '
+                     u'enabled with this feature, then it will redirect each '
+                     u'link to the last created Redirect Page.'),
+        default=False
+    )
+
     enableRegexURL = schema.Bool(
         title=(u'Enable URL redirection '
-               u'starting with the given urls.'),
+               u'for links matching the given RegEx url patterns.'),
+        description=(u'Enabling this feature may require you to write RegEx ('
+                     u'Regular Expressions. To find out more about RegEx '
+                     u'visit http://regexone.com/. \n'
+                     u'Nevertheless, if you wish to redirect all external '
+                     u'links to an intermediate page, you can add '
+                     u'http://(?!yoursite\.com).* '
+                     u'in the field below.'),
         default=False,
         required=False,
     )
@@ -55,6 +70,7 @@ class IRedirect(Interface):
                      u"Note: if redirection is enabled, then all requests "
                      u"to the given url will be redirected to this "
                      u"page before continuing to the given url."),
+        required=False,
         default=u"")
     submitButtonTitle = schema.TextLine(
         title=u"Submit title",
